@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Work</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,650,750&family=DM+Sans:opsz,wght@9..40,400,500,600&display=swap");
+
+      :root {
+        --bg: #fcfbf7;
+        --panel: rgba(255, 255, 255, 0.72);
+        --text: #111827;
+        --muted: rgba(17, 24, 39, 0.68);
+        --rule: rgba(17, 24, 39, 0.12);
+        --rule-strong: rgba(17, 24, 39, 0.22);
+        --shadow: 0 14px 40px rgba(17, 24, 39, 0.08);
+        --accent: #0f766e;
+        --accent-ink: #064e3b;
+        --max: 880px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(
+            900px 600px at 20% 10%,
+            rgba(15, 118, 110, 0.12),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 600px at 85% 20%,
+            rgba(59, 130, 246, 0.1),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 600px at 65% 95%,
+            rgba(245, 158, 11, 0.12),
+            transparent 55%
+          ),
+          var(--bg);
+        color: var(--text);
+        font: 16px/1.55 "DM Sans", ui-sans-serif, system-ui, -apple-system,
+          "Segoe UI", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .page {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 56px 20px 72px;
+      }
+
+      .cover {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 28px 20px;
+      }
+
+      .cover-inner {
+        width: min(var(--max), 100%);
+      }
+
+      .name {
+        margin: 0;
+        font-family: "Fraunces", ui-serif, Georgia, serif;
+        font-size: clamp(48px, 6.6vw, 84px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 750;
+      }
+
+      .meta {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        display: grid;
+        gap: 2px;
+      }
+
+      .cover-card {
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 22px;
+        padding: 26px 22px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .kicker {
+        margin: 0 0 10px;
+        color: var(--accent-ink);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .cover-cta {
+        margin-top: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid rgba(15, 118, 110, 0.28);
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--accent-ink);
+        width: fit-content;
+        background: rgba(15, 118, 110, 0.06);
+      }
+
+      .cover-cta:hover {
+        border-color: rgba(15, 118, 110, 0.6);
+        background: rgba(15, 118, 110, 0.1);
+      }
+
+      .arrow {
+        display: inline-block;
+        transform: translateY(1px);
+      }
+
+      header {
+        padding-top: 56px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Fraunces", ui-serif, Georgia, serif;
+        font-size: 40px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 650;
+      }
+
+      .subtitle {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .projects {
+        margin-top: 28px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .project {
+        padding: 18px 18px;
+        border: 1px solid var(--rule);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 1px 0 rgba(17, 24, 39, 0.04);
+        transition: transform 180ms ease, box-shadow 180ms ease,
+          border-color 180ms ease, background 180ms ease;
+      }
+
+      .project:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 44px rgba(17, 24, 39, 0.1);
+        border-color: rgba(17, 24, 39, 0.22);
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .project-title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .project-text {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .project {
+          transition: none;
+        }
+        .project:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover" aria-label="Cover">
+      <div class="cover-inner">
+        <div class="cover-card">
+          <p class="kicker">Portfolio</p>
+          <p class="name">Natasha Nirmal</p>
+          <div class="meta">
+            <div>University of California, Berkeley</div>
+            <div>B.A. in Data Science</div>
+          </div>
+          <a class="cover-cta" href="#work" aria-label="Jump to My Work section">
+            View my work <span class="arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main class="page" id="work">
+      <header>
+        <h1>My Work</h1>
+        <p class="subtitle">A collection of projects I've worked on.</p>
+      </header>
+
+      <!-- Project listing template (repeat per project) -->
+      <section class="projects" aria-label="Projects">
+        <article class="project">
+          <h2 class="project-title">Spam Email Classifier</h2>
+          <p class="project-text">
+            Engineered 30+ text-based features and built supervised ML models
+            (including logistic regression) with cross-validation to improve
+            accuracy by ~15% over a baseline.
+          </p>
+        </article>
+
+        <article class="project">
+          <h2 class="project-title">Housing Prices Predictor (Cook County)</h2>
+          <p class="project-text">
+            Built end-to-end linear regression pipelines to predict log sale
+            prices, analyzed residuals/model errors, and reflected on fairness
+            and bias in property tax assessment modeling.
+          </p>
+        </article>
+
+        <article class="project">
+          <h2 class="project-title">NGram TimeSeries Engine</h2>
+          <p class="project-text">
+            Implemented core Java data structures for an N-gram exploration tool
+            (TimeSeries + NGramMap) with efficient time-range slicing,
+            aggregation, and relative-frequency queries over large corpora.
+          </p>
+        </article>
+
+        <article class="project">
+          <h2 class="project-title">Hotel AI Email Assistant</h2>
+          <p class="project-text">
+            Built a hotel-focused AI assistant to read, classify, and draft
+            replies to guest emails with human review, using multi-agent
+            workflows and secure OAuth2 + Microsoft Graph/Outlook API access.
+          </p>
+        </article>
+
+        <article class="project">
+          <h2 class="project-title">Jeopardy Wagering Behavior Analysis</h2>
+          <p class="project-text">
+            Analyzed Daily Double and Final Jeopardy wagers by computing
+            wager-to-score ratios and stratifying by game state; used SQL
+            (pgAdmin 4) and visualizations to quantify strategic risk-taking.
+          </p>
+        </article>
+
+        <!-- Template (copy/paste to add more) -->
+        <!--
+        <article class="project">
+          <h2 class="project-title">${project.title}</h2>
+          <p class="project-text">${project.text}</p>
+        </article>
+        -->
+      </section>
+    </main>
+  </body>
+</html>
